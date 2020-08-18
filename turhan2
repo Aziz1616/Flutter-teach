@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+class birinciSinifMatematik extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+
+    return MaterialApp(
+      title: "1. sınıf Matematik Kazanımalrı",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("1. Sınıf Matematik Kazanımlmarı"),
+        ),
+        body: Container(
+          margin: EdgeInsets.symmetric(vertical: 20),
+
+          child: ListView(
+            scrollDirection: Axis.horizontal
+            ,
+            children: <Widget>[
+              Container(
+                width: 400,
+                color: Colors.white38,
+              ),
+              Container(
+                width: 400,
+                color: Colors.white38,
+              ),
+              Container(
+                width: 400,
+                color: Colors.white38,
+              ),
+              Container(
+                width: 400,
+                color: Colors.white38,
+              ),
+              Container(
+                width: 400,
+                color: Colors.red,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
