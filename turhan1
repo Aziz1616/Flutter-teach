@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+import 'package:flutterogremenim/dersProgrami.dart';
+import 'package:flutterogremenim/ekDersim.dart';
+import 'package:flutterogremenim/kazanimlarim.dart';
+
+void main() => runApp(Ogretmenim());
+
+class Ogretmenim extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: "Öğretmenim",
+      home: Anasayfa(),
+    );
+  }
+}
+
+class Anasayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Öğretmenim"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+              child: Expanded(
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                  padding: EdgeInsets.only(bottom: 0),
+                  color: Colors.white,
+                  child: Container(
+                    padding: EdgeInsets.only(top: 40),
+                    margin: EdgeInsets.only(bottom: 50),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          height: 300,
+                          width: 450,
+                          child: Image.asset(
+                            "assets/images/ogretmen.jpg",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            RaisedButton(
+              color: Colors.blueAccent,
+              child: Container(
+                width: 300,
+                child: Text(
+                  "Ders Programım",textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => dersProgrami(),
+                ),
+              ),
+            ),
+            RaisedButton(
+              color: Colors.blueAccent,
+              child: Container(
+                width: 300,
+                child: Text(
+                  "Kazanımlarım",textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 20,),
+                ),
+              ),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => kazanimlarim(),
+                  )),
+            ),
+            RaisedButton(
+              color: Colors.blueAccent,
+              child: Container(
+                width: 300,
+                child: Text(
+                  "Ek Dersimi Hesapla",textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ekDersim(),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
